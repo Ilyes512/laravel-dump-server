@@ -1,6 +1,6 @@
 <?php
 
-namespace BeyondCode\DumpServer;
+namespace Ilyes512\DumpServer;
 
 use Illuminate\Http\Request;
 use Symfony\Component\VarDumper\Cloner\VarCloner;

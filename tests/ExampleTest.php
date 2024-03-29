@@ -1,6 +1,6 @@
 <?php
 
-namespace BeyondCode\DumpServer\Tests;
+namespace Ilyes512\DumpServer\Tests;
 
 use PHPUnit\Framework\TestCase;
 

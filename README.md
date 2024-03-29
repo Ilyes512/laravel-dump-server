@@ -1,9 +1,5 @@
 # Laravel Dump Server
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/beyondcode/laravel-dump-server.svg?style=flat-square)](https://packagist.org/packages/beyondcode/laravel-dump-server)
-[![Quality Score](https://img.shields.io/scrutinizer/g/beyondcode/laravel-dump-server.svg?style=flat-square)](https://scrutinizer-ci.com/g/beyondcode/laravel-dump-server)
-[![Total Downloads](https://img.shields.io/packagist/dt/beyondcode/laravel-dump-server.svg?style=flat-square)](https://packagist.org/packages/beyondcode/laravel-dump-server)
-
 Bringing the [Symfony Var-Dump Server](https://symfony.com/doc/current/components/var_dumper.html#the-dump-server) to Laravel.
 
 This package will give you a dump server, that collects all your `dump` call outputs, so that it does not interfere with HTTP / API responses.
@@ -13,12 +9,12 @@ This package will give you a dump server, that collects all your `dump` call out
 You can install the package via composer:
 
 ```bash
-composer require --dev beyondcode/laravel-dump-server
+composer require --dev ilyes512/laravel-dump-server
 ```
 
 ## Documentation
 
-You can find the documentation on the [Beyond Code website](https://beyondco.de/docs/laravel-dump-server/installation).
+You can find the documentation in the docs dir.
 
 ### Changelog
 
