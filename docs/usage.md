@@ -1,8 +1,3 @@
----
-title: Usage
-order: 2
----
-
 # Usage
 
 Start the dump server by calling the artisan command:

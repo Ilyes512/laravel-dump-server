@@ -1,11 +1,10 @@
 {
-    "name": "beyondcode/laravel-dump-server",
+    "name": "ilyes512/laravel-dump-server",
     "description": "Symfony Var-Dump Server for Laravel",
     "keywords": [
-        "beyondcode",
         "laravel-dump-server"
     ],
-    "homepage": "https://github.com/beyondcode/laravel-dump-server",
+    "homepage": "https://github.com/ilyes512/laravel-dump-server",
     "license": "MIT",
     "authors": [
         {
@@ -26,9 +25,12 @@
         "larapack/dd": "^1.0",
         "phpunit/phpunit": "^7.0|^9.3"
     },
+    "replace": {
+        "beyondcode/laravel-dump-server": "*"
+    },
     "autoload": {
         "psr-4": {
-            "BeyondCode\\DumpServer\\": "src"
+            "Ilyes512\\DumpServer\\": "src"
         },
         "files": [
             "helpers.php"
@@ -36,7 +38,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "BeyondCode\\DumpServer\\Tests\\": "tests"
+            "Ilyes512\\DumpServer\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -49,7 +51,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "BeyondCode\\DumpServer\\DumpServerServiceProvider"
+                "Ilyes512\\DumpServer\\DumpServerServiceProvider"
             ]
         }
     }
