@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Ilyes512\DumpServer;
 
 use Symfony\Component\VarDumper\Cloner\VarCloner;
@@ -19,10 +21,9 @@ class Dumper
     /**
      * Dumper constructor.
      *
-     * @param  \Symfony\Component\VarDumper\Server\Connection|null  $connection
      * @return void
      */
-    public function __construct(Connection $connection = null)
+    public function __construct(?Connection $connection = null)
     {
         $this->connection = $connection;
     }
@@ -31,9 +32,8 @@ class Dumper
      * Dump a value with elegance.
      *
      * @param  mixed  $value
-     * @return void
      */
-    public function dump($value)
+    public function dump($value): void
     {
         if (class_exists(CliDumper::class)) {
             $data = $this->createVarCloner()->cloneVar($value);
@@ -47,9 +47,6 @@ class Dumper
         }
     }
 
-    /**
-     * @return VarCloner
-     */
     protected function createVarCloner(): VarCloner
     {
         return new VarCloner();

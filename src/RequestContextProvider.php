@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Ilyes512\DumpServer;
 
 use Illuminate\Http\Request;
@@ -20,25 +22,22 @@ class RequestContextProvider implements ContextProviderInterface
      *
      * @var \Symfony\Component\VarDumper\Cloner\VarCloner
      */
-    private $cloner;
+    private $varCloner;
 
     /**
      * RequestContextProvider constructor.
      *
-     * @param  \Illuminate\Http\Request|null  $currentRequest
      * @return void
      */
-    public function __construct(Request $currentRequest = null)
+    public function __construct(?Request $currentRequest = null)
     {
         $this->currentRequest = $currentRequest;
-        $this->cloner = new VarCloner;
-        $this->cloner->setMaxItems(0);
+        $this->varCloner = new VarCloner;
+        $this->varCloner->setMaxItems(0);
     }
 
     /**
      * Get the context.
-     *
-     * @return array|null
      */
     public function getContext(): ?array
     {
@@ -59,7 +58,7 @@ class RequestContextProvider implements ContextProviderInterface
         return [
             'uri' => $this->currentRequest->getUri(),
             'method' => $this->currentRequest->getMethod(),
-            'controller' => $controller ? $this->cloner->cloneVar(class_basename($controller)) : $this->cloner->cloneVar(null),
+            'controller' => $controller ? $this->varCloner->cloneVar(class_basename($controller)) : $this->varCloner->cloneVar(null),
             'identifier' => spl_object_hash($this->currentRequest),
         ];
     }

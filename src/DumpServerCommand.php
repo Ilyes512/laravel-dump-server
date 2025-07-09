@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Ilyes512\DumpServer;
 
 use Illuminate\Console\Command;
@@ -38,22 +40,19 @@ class DumpServerCommand extends Command
     /**
      * DumpServerCommand constructor.
      *
-     * @param  \Symfony\Component\VarDumper\Server\DumpServer  $server
      * @return void
      */
-    public function __construct(DumpServer $server)
+    public function __construct(DumpServer $dumpServer)
     {
-        $this->server = $server;
+        $this->server = $dumpServer;
 
         parent::__construct();
     }
 
     /**
      * Handle the command.
-     *
-     * @return void
      */
-    public function handle()
+    public function handle(): void
     {
         switch ($format = $this->option('format')) {
             case 'cli':
@@ -66,9 +65,9 @@ class DumpServerCommand extends Command
                 throw new InvalidArgumentException(sprintf('Unsupported format "%s".', $format));
         }
 
-        $io = new SymfonyStyle($this->input, $this->output);
+        $symfonyStyle = new SymfonyStyle($this->input, $this->output);
 
-        $errorIo = $io->getErrorStyle();
+        $errorIo = $symfonyStyle->getErrorStyle();
         $errorIo->title('Laravel Var Dump Server');
 
         $this->server->start();
@@ -76,8 +75,8 @@ class DumpServerCommand extends Command
         $errorIo->success(sprintf('Server listening on %s', $this->server->getHost()));
         $errorIo->comment('Quit the server with CONTROL-C.');
 
-        $this->server->listen(function (Data $data, array $context, int $clientId) use ($descriptor, $io) {
-            $descriptor->describe($io, $data, $context, $clientId);
+        $this->server->listen(function (Data $data, array $context, int $clientId) use ($descriptor, $symfonyStyle): void {
+            $descriptor->describe($symfonyStyle, $data, $context, $clientId);
         });
     }
 }

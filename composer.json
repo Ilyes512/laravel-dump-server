@@ -22,7 +22,8 @@
         "symfony/var-dumper": "^5.0|^6.0|^7.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^10.5"
+        "phpunit/phpunit": "^10.5",
+        "rector/rector": "^2.1"
     },
     "replace": {
         "beyondcode/laravel-dump-server": "*"
