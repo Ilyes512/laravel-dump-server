@@ -1,10 +1,10 @@
 {
-    "name": "ilyes512/laravel-dump-server",
+    "name": "specsnl/laravel-dump-server",
     "description": "Symfony Var-Dump Server for Laravel",
     "keywords": [
         "laravel-dump-server"
     ],
-    "homepage": "https://github.com/ilyes512/laravel-dump-server",
+    "homepage": "https://github.com/specsnl/laravel-dump-server",
     "license": "MIT",
     "authors": [
         {
@@ -30,7 +30,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Ilyes512\\DumpServer\\": "src"
+            "Specs\\DumpServer\\": "src"
         },
         "files": [
             "helpers.php"
@@ -38,7 +38,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Ilyes512\\DumpServer\\Tests\\": "tests"
+            "Specs\\DumpServer\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -51,7 +51,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Ilyes512\\DumpServer\\DumpServerServiceProvider"
+                "Specs\\DumpServer\\DumpServerServiceProvider"
             ]
         }
     }

@@ -11,7 +11,7 @@ This package will give you a dump server, that collects all your dump call outpu
 You can install the package via composer:
 
 ```bash
-composer require --dev ilyes512/laravel-dump-server
+composer require --dev specsnl/laravel-dump-server
 ```
 
 The package will register itself automatically. 
@@ -19,7 +19,7 @@ The package will register itself automatically.
 Optionally you can publish the package configuration using:
 
 ```bash
-php artisan vendor:publish --provider="Ilyes512\DumpServer\DumpServerServiceProvider"
+php artisan vendor:publish --provider="Specs\DumpServer\DumpServerServiceProvider"
 ```
 
 This will publish a file called `debug-server.php` in your `config` folder.
