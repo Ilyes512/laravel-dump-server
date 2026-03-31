@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Ilyes512\DumpServer;
+namespace Specs\DumpServer;
 
 use Illuminate\Support\ServiceProvider;
 use Symfony\Component\VarDumper\VarDumper;

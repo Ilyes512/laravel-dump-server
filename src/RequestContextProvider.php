@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Ilyes512\DumpServer;
+namespace Specs\DumpServer;
 
 use Illuminate\Http\Request;
 use Symfony\Component\VarDumper\Cloner\VarCloner;

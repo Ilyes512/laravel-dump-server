@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Ilyes512\DumpServer;
+namespace Specs\DumpServer;
 
 use Illuminate\Console\Command;
 use InvalidArgumentException;
