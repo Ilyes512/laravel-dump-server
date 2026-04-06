@@ -1,0 +1,19 @@
+services:
+  php:
+    image: ${COMPOSE_PROJECT_NAME}-php-vscode:latest
+    entrypoint: ["sh", "-c", "trap : 15 ; sleep 9999d & wait"]
+    build:
+      context: ../.
+      dockerfile: .devcontainer/Dockerfile
+      args:
+        IMAGE_REGISTRY_PHP: $IMAGE_REGISTRY_PHP
+        IMAGE_TAG_PHP_VSCODE: $IMAGE_TAG_PHP_VSCODE
+    volumes:
+      - $HOME/.ssh/known_hosts:/home/code/.ssh/known_hosts:ro
+      # - $HOME/auth.json:/root/auth.json:ro
+      - ../.:/workspace:delegated
+      - vscode-extensions:/home/code/.vscode-server/extensions
+      - ./050-xdebug.ini:/usr/local/etc/php/conf.d/050-xdebug.ini
+
+volumes:
+  vscode-extensions:

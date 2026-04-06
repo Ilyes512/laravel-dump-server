@@ -1,0 +1,24 @@
+{
+    "name": "temp-project",
+    "remoteUser": "code",
+    "dockerComposeFile": ["docker-compose.yml"],
+    "service": "php",
+    "workspaceFolder": "/workspace",
+    "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash"
+            },
+            "extensions": [
+                "bmewburn.vscode-intelephense-client",
+                "redhat.vscode-yaml",
+                "mehedidracula.php-namespace-resolver",
+                "xdebug.php-debug",
+                "Kasik96.latte",
+                "EditorConfig.EditorConfig",
+                "mhutchie.git-graph"
+            ]
+        }
+    }
+}
